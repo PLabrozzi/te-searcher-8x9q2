@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Third Eye Pre-Order Searcher</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 15px; width: 320px; margin: auto; background: #f9f9f9; max-height: 550px; overflow-y: auto; }
+        h2 { font-size: 18px; margin-top: 0; text-align: center; }
+        .group { margin-bottom: 15px; background: white; border: 1px solid #e0e0e0; padding: 12px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .date-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; font-weight: bold; }
+        button { padding: 6px 10px; cursor: pointer; border: 1px solid #ccc; background: #fff; border-radius: 4px; }
+        button:hover { background: #eee; }
+        .checkbox-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px; }
+        label { display: flex; align-items: center; font-size: 14px; cursor: pointer; }
+        label input { margin-right: 6px; }
+        .full-width { grid-column: span 2; }
+        .options-column { margin: 15px 0 10px 0; display: flex; flex-direction: column; gap: 8px; padding-left: 5px; }
+        #searchBtn { width: 100%; padding: 12px; background: #d9232a; color: white; border: none; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; }
+        #searchBtn:hover { background: #b01c22; }
+    </style>
+</head>
+<body>
+
+    <h2>Third Eye Pre-Orders</h2>
+
+    <div class="group">
+        <strong>Release Date (Target: 8 Weeks Out)</strong>
+        <div class="date-controls">
+            <button id="prevWeek">&laquo; Prev</button>
+            <span id="dateDisplay"></span>
+            <button id="nextWeek">Next &raquo;</button>
+        </div>
+    </div>
+
+    <div class="group">
+        <strong>Publishers</strong>
+        <div class="checkbox-grid">
+            <label><input type="checkbox" class="vendor" value="Marvel" checked> Marvel</label>
+            <label><input type="checkbox" class="vendor" value="DC"> DC</label>
+            <label><input type="checkbox" class="vendor" value="Image"> Image</label>
+            <label><input type="checkbox" class="vendor" value="Boom! Studios"> Boom! Studios</label>
+            <label><input type="checkbox" class="vendor" value="Dark Horse"> Dark Horse</label>
+            <label><input type="checkbox" class="vendor" value="IDW Publishing"> IDW</label>
+            <label><input type="checkbox" class="vendor" value="Dynamite"> Dynamite</label>
+            <label><input type="checkbox" class="vendor" value="Vault Comics"> Vault</label>
+        </div>
+    </div>
+
+    <div class="group">
+        <strong>Product Type</strong>
+        <div class="checkbox-grid">
+            <label class="full-width"><input type="checkbox" class="type" value="Comic Books" checked> Standard Comics</label>
+            <label class="full-width"><input type="checkbox" class="type" value="Comic Books > Incentives"> Incentives</label>
+            <label class="full-width"><input type="checkbox" class="type" value="Comic Books > Bundles"> Bundles</label>
+            <label><input type="checkbox" class="type" value="Trade Paperbacks"> Trade PBs</label>
+            <label><input type="checkbox" class="type" value="Graphic Novels"> Graphic Novels</label>
+        </div>
+    </div>
+
+    <div class="group">
+        <strong>Spider-Verse Titles</strong>
+        <div class="checkbox-grid">
+            <label><input type="checkbox" class="title-check" value="Amazing Spider-Man"> Amazing Spider</label>
+            <label><input type="checkbox" class="title-check" value="Spider-Man"> Spider-Man</label>
+            <label><input type="checkbox" class="title-check" value="Miles Morales"> Miles Morales</label>
+            <label><input type="checkbox" class="title-check" value="Venom"> Venom</label>
+            <label><input type="checkbox" class="title-check" value="All-New Venom"> All-New Venom</label>
+            <label><input type="checkbox" class="title-check" value="Black Cat"> Black Cat</label>
+            <label><input type="checkbox" class="title-check" value="Mary Jane"> Mary Jane</label>
+            <label><input type="checkbox" class="title-check" value="Spider-Gwen"> Spider-Gwen</label>
+            <label><input type="checkbox" class="title-check" value="Spider-Boy"> Spider-Boy</label>
+            <label><input type="checkbox" class="title-check" value="Spectacular Spider-Men"> Spectacular</label>
+            <label><input type="checkbox" class="title-check" value="Edge of Spider-Verse"> Edge of Spider</label>
+            <label><input type="checkbox" class="title-check" value="Spider-Versity"> Spider-Versity</label>
+        </div>
+    </div>
+
+    <div class="group">
+        <strong>X-Men, Ultimate & Star Wars</strong>
+        <div class="checkbox-grid">
+            <label><input type="checkbox" class="title-check" value="Ultimate Spider-Man"> Ultimate Spidey</label>
+            <label><input type="checkbox" class="title-check" value="Ultimate X-Men"> Ultimate X-Men</label>
+            <label><input type="checkbox" class="title-check" value="The Ultimates"> The Ultimates</label>
+            <label><input type="checkbox" class="title-check" value="Uncanny X-Men"> Uncanny X-Men</label>
+            <label><input type="checkbox" class="title-check" value="Wolverine"> Wolverine</label>
+            <label><input type="checkbox" class="title-check" value="Fantastic Four"> Fantastic Four</label>
+            <label><input type="checkbox" class="title-check" value="Star Wars"> Star Wars</label>
+            <label><input type="checkbox" class="title-check" value="Darth Vader"> Darth Vader</label>
+        </div>
+    </div>
+
+    <div class="group">
+        <strong>DC & Absolute Universe</strong>
+        <div class="checkbox-grid">
+            <label><input type="checkbox" class="title-check" value="Absolute Batman"> Absolute Batman</label>
+            <label><input type="checkbox" class="title-check" value="Absolute Superman"> Absolute Supes</label>
+            <label><input type="checkbox" class="title-check" value="Absolute Wonder Woman"> Absolute W.W.</label>
+            <label><input type="checkbox" class="title-check" value="Absolute Flash"> Absolute Flash</label>
+            <label><input type="checkbox" class="title-check" value="Supergirl"> Supergirl</label>
+            <label><input type="checkbox" class="title-check" value="Zatanna"> Zatanna</label>
+            <label><input type="checkbox" class="title-check" value="Green Lantern"> Green Lantern</label>
+            <label><input type="checkbox" class="title-check" value="Batman"> Batman</label>
+        </div>
+    </div>
+
+    <div class="group">
+        <strong>Energon Universe</strong>
+        <div class="checkbox-grid">
+            <label><input type="checkbox" class="title-check" value="Transformers"> Transformers</label>
+            <label><input type="checkbox" class="title-check" value="Void Rivals"> Void Rivals</label>
+            <label><input type="checkbox" class="title-check" value="G.I. Joe"> G.I. Joe</label>
+            <label><input type="checkbox" class="title-check" value="Duke"> Duke</label>
+            <label><input type="checkbox" class="title-check" value="Cobra Commander"> Cobra Cmdr</label>
+            <label><input type="checkbox" class="title-check" value="Destro"> Destro</label>
+        </div>
+    </div>
+
+    <div class="options-column">
+        <label><input type="checkbox" id="disableDateCheck"> Disable Date Search</label>
+        <label><input type="checkbox" id="newTabCheck"> Open results in a new tab</label>
+    </div>
+
+    <button id="searchBtn">Open in Third Eye</button>
+
+    <script>
+        // --- SECURITY OPTION 2: THE PIN LOCK ---
+        const savedPin = localStorage.getItem('thirdEyePin');
+        if (savedPin !== "1984") { // Change "1984" to your desired PIN
+            const userPin = prompt("Enter your PIN to access the tool:");
+            if (userPin === "1984") { // Change "1984" here as well
+                localStorage.setItem('thirdEyePin', userPin);
+            } else {
+                // If they fail, destroy the HTML so they see nothing but an error
+                document.body.innerHTML = "<h2 style='text-align:center; padding: 40px; color: #d9232a;'>Access Denied.</h2>";
+                throw new Error("Incorrect PIN. Stopping script.");
+            }
+        }
+
+
+        // --- 1. DATE LOGIC ---
+        let currentDate = new Date();
+        const savedDate = localStorage.getItem('thirdEyeDate');
+
+        if (savedDate) {
+            const parsedDate = new Date(savedDate);
+            if (!isNaN(parsedDate)) {
+                currentDate
